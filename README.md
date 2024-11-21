@@ -1,4 +1,4 @@
-# School Sync School Management Dashboard
+# SchoolSync- A Next-Gen School Management System
 
 ## Getting Started
 
