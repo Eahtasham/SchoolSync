@@ -1,4 +1,4 @@
-# Lama Dev School Management Dashboard
+# School Sync School Management Dashboard
 
 ## Getting Started
 
