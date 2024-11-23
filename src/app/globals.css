@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  scroll-behavior: smooth;
+}
 
 
 @layer base {
@@ -25,8 +28,8 @@
     --border: 0 0% 89.8%;
     --input: 0 0% 89.8%;
     --ring: 0 0% 3.9%;
-    --chart-1: 12 76% 61%;
-    --chart-2: 173 58% 39%;
+    --chart-1: 173 58% 39%;
+    --chart-2: 12 76% 61%;
     --chart-3: 197 37% 24%;
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
@@ -91,6 +94,9 @@
   width: 100% !important;
   border: none !important;
   font-family: "Inter", sans-serif !important;
+
+  @apply bg-white dark:bg-stone-800 text-gray-900 dark:text-white;
+
 }
 
 .react-calendar__navigation__label__labelText {
@@ -98,36 +104,47 @@
 }
 
 .react-calendar__tile--active {
-  background-color: #c3ebfa !important;
-  color: black !important;
+
+  @apply bg-blue-200 dark:bg-stone-800 text-black dark:text-white !important;
+
 }
 
 .rbc-btn-group:first-child {
   display: none !important;
 }
 
+
+.rbc-toolbar {
+  @apply mb-4 flex justify-between items-center flex-wrap;
+}
+
 .rbc-toolbar-label {
-  text-align: right !important;
-  padding: 0px 20px !important;
+  @apply order-1 w-full text-center mb-2 sm:order-2 sm:w-auto sm:mb-0;
+}
+
+.rbc-btn-group {
+  @apply order-2 sm:order-3;
 }
 
 .rbc-btn-group:last-child {
-  font-size: 13px !important;
+  font-size: 13px !important; /* This line will be removed */
 }
 
 .rbc-btn-group:last-child button {
   border: none !important;
-  background-color: #f1f0ff !important;
+  @apply bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-gray-100 !important;
   margin-left: 2px !important;
 }
 
 .rbc-toolbar button.rbc-active {
-  background-color: #dbdafe !important;
+
+  @apply bg-blue-200 dark:bg-blue-600 !important;
   box-shadow: none !important;
 }
 
 .rbc-time-view {
-  border-color: #eee !important;
+  @apply border-gray-200 dark:border-gray-700 !important;
+
 }
 
 .rbc-time-header {
@@ -140,6 +157,7 @@
 
 .rbc-time-gutter.rbc-time-column {
   font-size: 12px !important;
+  @apply text-gray-700 dark:text-gray-300;
 }
 
 .rbc-time-gutter.rbc-time-column .rbc-timeslot-group {
@@ -147,7 +165,8 @@
 }
 
 .rbc-timeslot-group {
-  background-color: #f7fdff !important;
+
+  @apply bg-gray-50 dark:bg-stone-800 !important;
 }
 
 .rbc-day-slot {
@@ -156,38 +175,114 @@
 
 .rbc-event {
   border: none !important;
-  color: black !important;
+  @apply text-gray-900 dark:text-gray-100 !important;
   padding: 10px !important;
   margin: 10px !important;
   width: 99% !important;
+  @apply rounded-md shadow-sm; /* Updated */
+}
+
+.rbc-event-content {
+  @apply text-sm font-medium; /* New */
 }
 
 .rbc-event:nth-child(1) {
-  background-color: #e2f8ff !important;
+  @apply bg-blue-100 dark:bg-blue-800 !important;
 }
 .rbc-event:nth-child(2) {
-  background-color: #fefce8 !important;
+  @apply bg-yellow-100 dark:bg-yellow-800 !important;
 }
 .rbc-event:nth-child(3) {
-  background-color: #f2f1ff !important;
+  @apply bg-indigo-100 dark:bg-indigo-800 !important;
 }
 .rbc-event:nth-child(4) {
-  background-color: #fdf2fb !important;
+  @apply bg-pink-100 dark:bg-pink-800 !important;
 }
 .rbc-event:nth-child(5) {
-  background-color: #e2f8ff !important;
+  @apply bg-blue-100 dark:bg-blue-800 !important;
 }
 .rbc-event:nth-child(6) {
-  background-color: #fefce8 !important;
+  @apply bg-yellow-100 dark:bg-yellow-800 !important;
 }
 .rbc-event:nth-child(7) {
-  background-color: #f2f1ff !important;
+  @apply bg-indigo-100 dark:bg-indigo-800 !important;
 }
 .rbc-event:nth-child(8) {
-  background-color: #fdf2fb !important;
+  @apply bg-pink-100 dark:bg-pink-800 !important;
 }
 
-.rbc-event-label{
-  color: gray !important;
+.rbc-event-label {
+  @apply text-gray-600 dark:text-gray-400 !important;
   margin-bottom: 5px;
 }
+
+/* Main card background fix */
+.responsive-calendar-card {
+  @apply bg-white dark:bg-stone-800;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .rbc-toolbar {
+    @apply flex-col items-stretch; /* Updated */
+  }
+
+  .rbc-toolbar-label {
+    @apply mb-2 text-center; /* Updated */
+  }
+
+  .rbc-btn-group {
+    @apply flex justify-center; /* New */
+  }
+
+  .rbc-btn-group:last-child {
+    @apply w-full flex justify-between; /* This line will be removed */
+  }
+
+  .rbc-btn-group:last-child button {
+    @apply flex-grow text-xs py-1; /* This line will be removed */
+  }
+
+  .rbc-time-gutter.rbc-time-column .rbc-timeslot-group {
+    padding: 0px 5px !important;
+  }
+
+  .rbc-event {
+    padding: 5px !important;
+    margin: 5px !important;
+  }
+}
+
+/* Additional dark mode adjustments */
+.dark .rbc-off-range-bg {
+  @apply bg-gray-900;
+}
+
+.dark .rbc-day-bg + .rbc-day-bg {
+  @apply border-gray-700;
+}
+
+.dark .rbc-month-row + .rbc-month-row {
+  @apply border-gray-700;
+}
+
+.dark .rbc-header {
+  @apply border-gray-700;
+}
+
+.dark .rbc-header + .rbc-header {
+  @apply border-gray-700;
+}
+
+.dark .rbc-day-bg + .rbc-day-bg {
+  @apply border-gray-700;
+}
+
+.dark .rbc-month-view {
+  @apply border-gray-700;
+}
+
+.dark .rbc-today {
+  @apply bg-blue-900;
+}
+

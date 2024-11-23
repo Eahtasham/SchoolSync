@@ -33,7 +33,7 @@ const data = [
 
 const AttendanceChart = () => {
     return (
-        <Card className="bg-white rounded-xl w-full h-full p-4 mb-3">
+        <Card className="bg-white dark:bg-stone-800 rounded-xl w-full h-full p-4 mb-3">
             <div className="flex justify-between items-center">
                 <h1 className="text-lg font-semibold">Attendance</h1>
                 <Image src="/moreDark.png" alt="" width={20} height={20} />

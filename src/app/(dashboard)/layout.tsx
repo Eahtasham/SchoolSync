@@ -1,4 +1,4 @@
-import Navbar from "@/components/dashboard/Navbar"
+import Navbar from "@/components/navbar/MainNavbar"
 
 export default function DashboardLayout({
   children,
@@ -7,14 +7,13 @@ export default function DashboardLayout({
 }>) {
   return (
     <>
-      <header className="flex h-16 shrink-0 items-center gap-2 transition-[width,height] ease-linear group-has-[[data-collapsible=icon]]/sidebar-wrapper:h-12">
-        <Navbar />
-      </header>
+      <Navbar />
       {/* MAIN PANEL - dashboard panels*/}
-      <main className="h-full w-full bg-[#f7f8fa] p-3 flex flex-col">
+
+      <main className="h-full w-full flex flex-col p-3 mt-20 md:mt-0">
+
         {children}
       </main>
     </>
-
   )
 }

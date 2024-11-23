@@ -62,7 +62,7 @@ export default function EventCalendar() {
   )
 
   return (
-    <Card className="w-full pt-4">
+    <Card className="w-full pt-4 dark:bg-stone-800">
       <CardContent className="w-full gap-4">
         <div className="flex items-center justify-between">
           <h2 className="text-xl font-semibold">Events</h2>
@@ -92,10 +92,10 @@ export default function EventCalendar() {
                 className="w-full rounded-md border-2 border-gray-100 border-t-4 odd:border-t-blue-400 even:border-t-purple-400 p-4"
               >
                 <div className="flex items-center justify-between">
-                  <h3 className="font-semibold text-gray-600">{event.title}</h3>
+                  <h3 className="font-semibold text-gray-600 dark:text-slate-300">{event.title}</h3>
                   <span className="text-gray-400 text-xs">{event.time}</span>
                 </div>
-                <p className="mt-2 text-gray-500 text-sm">{event.description}</p>
+                <p className="mt-2 text-gray-500 dark:text-slate-400 text-sm">{event.description}</p>
               </div>
             ))
           ) : (

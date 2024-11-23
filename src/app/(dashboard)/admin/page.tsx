@@ -4,6 +4,7 @@ import RatioChart from "@/components/dashboard/RatioChart";
 import EventCalendar from "@/components/dashboard/EventCalendar";
 import FinanceChart from "@/components/dashboard/FinanceChart";
 import UserCard from "@/components/dashboard/UserCard";
+import PieChart from "@/components/dashboard/PieChart"
 
 const AdminPage = () => {
   return (
@@ -21,8 +22,9 @@ const AdminPage = () => {
         {/* MIDDLE CHARTS */}
         <div className="flex gap-4 flex-col lg:flex-row">
           {/* SEX-RATIO CHART */}
-          <div className="w-full h-[450px] lg:w-[40%]">
-            <RatioChart />
+          <div className="w-full h-[450px] lg:w-[40%] dark:bg-stone-800 rounded-xl">
+            {/* <RatioChart /> */}
+            <PieChart/>
           </div>
           {/* ATTENDANCE CHART */}
           <div className="w-full h-[450px] lg:w-[60%]">

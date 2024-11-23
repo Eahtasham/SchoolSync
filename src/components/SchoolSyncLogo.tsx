@@ -1,22 +1,13 @@
 "use client"
-import Image from "next/image";
+import { School } from 'lucide-react';
 import Link from "next/link";
 
 const SchoolSyncLogo = () => {
   return (
-    <Link href="/" className="flex items-center gap-2">
+    <Link href="/" className="flex justify-center items-center text-center">
       <div className="relative h-10 w-10">
-        <Image
-          src="/logo.png"
-          alt="SchoolSync Logo"
-          fill
-          className="object-contain"
-          priority
-        />
+      <School size={36} color="#561fbd" />
       </div>
-      <span className="hidden sm:block text-2xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
-        SchoolSync
-      </span>
     </Link>
   )
 }

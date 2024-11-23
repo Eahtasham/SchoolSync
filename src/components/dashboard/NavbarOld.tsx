@@ -52,7 +52,7 @@ const Navbar = () => {
           <span className="text-xs leading-3 font-medium">DDC</span>
           <span className="text-[10px] text-gray-500 text-right">Admin</span>
         </div>
-        <Avatar className="md:hidden">
+        <Avatar className="">
           <AvatarImage src="https://github.com/durjoydutta.png" alt="User avatar" />
           <AvatarFallback>CN</AvatarFallback>
         </Avatar>

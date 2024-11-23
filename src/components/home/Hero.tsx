@@ -35,7 +35,7 @@ const Hero = () => {
             >
                 <Badge
                     variant="outline"
-                    className="px-4 py-1 rounded-full text-sm lg:text-lg animate-fade-in border-blue-500 text-blue-600"
+                    className="px-4 py-1 rounded-full text-sm lg:text-md animate-fade-in border-blue-500 text-blue-600 dark:text-lamaGreenLight dark:border-white"
                 >
                     Transforming Education
                 </Badge>
@@ -65,7 +65,7 @@ const Hero = () => {
                 transition={{ duration: 0.5, delay: 0.5 }}
                 className="mt-8 text-lg lg:text-xl text-gray-600 dark:text-gray-400 max-w-2xl lg:max-w-4xl mx-auto"
             >
-                Experience the future of education management with our comprehensive platform that seamlessly connects administrators, teachers, students, and parents.
+                Experience the future of education management with our comprehensive platform that seamlessly connects teachers, students, and parents.
             </motion.p>
         </motion.div>
     )
