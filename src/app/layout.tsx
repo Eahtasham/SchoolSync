@@ -1,23 +1,18 @@
 import type { Metadata } from "next";
+import { Analytics } from '@vercel/analytics/next';
+import { SpeedInsights } from "@vercel/speed-insights/next"
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Footer from "@/components/Footer";
 import { ThemeProvider } from "@/components/theme-provider"
 import { AppSidebar } from "@/components/sidebar/app-sidebar"
-import {
-  Breadcrumb,
-  BreadcrumbItem,
-  BreadcrumbLink,
-  BreadcrumbList,
-  BreadcrumbPage,
-  BreadcrumbSeparator,
-} from "@/components/ui/breadcrumb"
 import { Separator } from "@/components/ui/separator"
 import {
   SidebarInset,
   SidebarProvider,
   SidebarTrigger,
 } from "@/components/ui/sidebar"
+import { ClerkProvider} from '@clerk/nextjs'
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -32,6 +27,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
+  <ClerkProvider>
     <html lang="en">
       <body className={"inter.className"}>
         <ThemeProvider
@@ -41,10 +37,12 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <SidebarProvider>
-            <AppSidebar/>
+            <AppSidebar />
             <SidebarInset>
-              <main className="flex flex-col antialiased">
+              <main className="relative flex flex-col antialiased bg-gradient-to-br from-indigo-200 to-indigo-700 dark:from-black dark:to-indigo-800">
                 {children}
+                <Analytics />
+                <SpeedInsights />
                 <Footer />
               </main>
             </SidebarInset>
@@ -52,5 +50,6 @@ export default function RootLayout({
         </ThemeProvider>
       </body>
     </html>
+  </ClerkProvider>
   );
 }

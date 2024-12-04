@@ -9,7 +9,7 @@ export default function DashboardLayout({
     <>
       <Navbar />
       {/* MAIN PANEL - dashboard panels*/}
-      <main className="h-full w-full flex flex-col p-3 mt-20 md:mt-0">
+      <main className="h-full w-full flex flex-col p-3 dark:bg-black">
         {children}
       </main>
     </>

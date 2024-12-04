@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect } from 'react'
+import { use, useEffect } from 'react'
 import { motion, useAnimation } from 'framer-motion'
 import { Bell, Calendar, BarChart, GraduationCap, Users, UserCircle, BookOpen } from 'lucide-react'
 import Hero from "@/components/home/Hero"
@@ -9,14 +9,25 @@ import StatCards from "@/components/home/StatCards"
 import FeatureCards from "@/components/home/FeatureCards"
 import GetStartedButton from "@/components/home/GetStarted"
 import Navbar from "@/components/navbar/MainNavbar"
-import BackgroundAnimation from "@/components/BackgroundAnimation"
+import { useUser } from '@clerk/nextjs'
+import { useRouter } from 'next/navigation'
 
 const Homepage = () => {
   const controls = useAnimation()
+  const { isLoaded, isSignedIn, user } = useUser()
 
+  const router=useRouter()
+  // console.log("This is user",user)
+
+  console.log(user)
   useEffect(() => {
     controls.start('visible')
-  }, [controls])
+    const role=user?.publicMetadata.role;
+
+    if(role){
+      router.push(`${role}`)
+
+  }}, [controls,user,router])
 
   const stats = [
     { label: "Active Students", value: "2,000+" },
@@ -39,8 +50,7 @@ const Homepage = () => {
   ]
 
   return (
-    <div className="relative min-h-screen w-full bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-indigo-950 relative overflow-hidden z-0">
-      <BackgroundAnimation />
+    <div className="relative min-h-screen w-full overflow-hidden">
       <Navbar />
       <Hero />
       <div className="container min-h-svh mx-auto px-4 py-12 space-y-24">

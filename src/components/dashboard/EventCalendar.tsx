@@ -66,7 +66,7 @@ export default function EventCalendar() {
       <CardContent className="w-full gap-4">
         <div className="flex items-center justify-between">
           <h2 className="text-xl font-semibold">Events</h2>
-          <MoreHorizontal className="h-8 w-8 text-gray-500" />
+          <MoreHorizontal className="h-8 w-8" />
         </div>
         <Calendar
           mode="single"

@@ -30,10 +30,11 @@
   },
   "include": [
     "next-env.d.ts",
+    "global.d.ts",
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts"
-  ],
+, "prisma/admin-list.mts", "prisma/index.mjs"  ],
   "exclude": [
     "node_modules"
   ]

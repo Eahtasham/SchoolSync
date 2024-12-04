@@ -7,7 +7,8 @@ import {
   LogIn,
   ChevronLeft,
   ChevronRight,
-  PanelLeft
+  PanelLeft,
+  Menu
 } from "lucide-react";
 import { useIsMobile } from "@/hooks/use-mobile"
 import { cn } from "@/lib/utils"
@@ -26,7 +27,7 @@ import {
 const SIDEBAR_COOKIE_NAME = "sidebar:state"
 const SIDEBAR_COOKIE_MAX_AGE = 60 * 60 * 24 * 7
 const SIDEBAR_WIDTH = "16rem"
-const SIDEBAR_WIDTH_MOBILE = "18rem"
+const SIDEBAR_WIDTH_MOBILE = "15rem"
 const SIDEBAR_WIDTH_ICON = "3rem"
 const SIDEBAR_KEYBOARD_SHORTCUT = "m"
 
@@ -273,26 +274,28 @@ const SidebarTrigger = React.forwardRef<
     <Button
       ref={ref}
       data-sidebar="trigger"
-      variant="ghost"
-      size="icon"
-      className={cn("h-8 w-12", className)}
+      variant="ddc"
+      className={cn("", className)}
       onClick={(event) => {
         onClick?.(event);
         toggleSidebar();
       }}
       {...props}
     >
-      {state === "expanded" ? (
-        <ChevronLeft className="h-6 w-6 transition-transform duration-300" />
-      ) : (
-        <ChevronRight className="h-6 w-6 transition-transform duration-300" />
-      )}
-      <PanelLeft />
+      <PanelLeft size={32} />
+      <ChevronLeft
+        className={cn(
+          "h-10 w-10 transform transition-transform duration-300 ease-in-out",
+          state === "collapsed" ? "rotate-180" : "rotate-0"
+        )}
+      />
       <span className="sr-only">Toggle Sidebar</span>
     </Button>
   );
 });
 SidebarTrigger.displayName = "SidebarTrigger";
+
+
 
 
 const SidebarRail = React.forwardRef<

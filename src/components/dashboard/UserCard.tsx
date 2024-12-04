@@ -1,5 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import Image from "next/image";
+import { MoreHorizontal } from 'lucide-react'
 
 const UserCard = ({ type }: { type: string }) => {
   return (
@@ -8,9 +8,9 @@ const UserCard = ({ type }: { type: string }) => {
         <span className="text-[10px] bg-white dark:bg-lamaYellow px-2 py-1 rounded-full text-green-600">
           2024-25
         </span>
-        <Image src="/more.png" alt="" width={20} height={20} />
+        <MoreHorizontal className="h-8 w-8" />
       </div>
-      <h1 className="text-2xl font-semibold my-4">420</h1>
+      <h1 className="text-2xl font-semibold my-4">620</h1>
       <h2 className="capitalize text-sm font-medium text-gray-500">{type}s</h2>
     </Card>
   );

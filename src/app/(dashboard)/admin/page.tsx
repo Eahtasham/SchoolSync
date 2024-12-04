@@ -1,6 +1,5 @@
 import Announcements from "@/components/dashboard/Announcements";
 import AttendanceChart from "@/components/dashboard/AttendanceChart";
-import RatioChart from "@/components/dashboard/RatioChart";
 import EventCalendar from "@/components/dashboard/EventCalendar";
 import FinanceChart from "@/components/dashboard/FinanceChart";
 import UserCard from "@/components/dashboard/UserCard";

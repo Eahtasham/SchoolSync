@@ -94,7 +94,9 @@ html {
   width: 100% !important;
   border: none !important;
   font-family: "Inter", sans-serif !important;
+
   @apply bg-white dark:bg-stone-800 text-gray-900 dark:text-white;
+
 }
 
 .react-calendar__navigation__label__labelText {
@@ -102,12 +104,15 @@ html {
 }
 
 .react-calendar__tile--active {
+
   @apply bg-blue-200 dark:bg-stone-800 text-black dark:text-white !important;
+
 }
 
 .rbc-btn-group:first-child {
   display: none !important;
 }
+
 
 .rbc-toolbar {
   @apply mb-4 flex justify-between items-center flex-wrap;
@@ -132,12 +137,14 @@ html {
 }
 
 .rbc-toolbar button.rbc-active {
+
   @apply bg-blue-200 dark:bg-blue-600 !important;
   box-shadow: none !important;
 }
 
 .rbc-time-view {
   @apply border-gray-200 dark:border-gray-700 !important;
+
 }
 
 .rbc-time-header {
@@ -158,6 +165,7 @@ html {
 }
 
 .rbc-timeslot-group {
+
   @apply bg-gray-50 dark:bg-stone-800 !important;
 }
 

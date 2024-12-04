@@ -1,7 +1,7 @@
 "use client";
 import { BarChart, Bar, Rectangle, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import Image from 'next/image';
+import { MoreHorizontal } from 'lucide-react'
 
 const data = [
     {
@@ -36,7 +36,7 @@ const AttendanceChart = () => {
         <Card className="bg-white dark:bg-stone-800 rounded-xl w-full h-full p-4 mb-3">
             <div className="flex justify-between items-center">
                 <h1 className="text-lg font-semibold">Attendance</h1>
-                <Image src="/moreDark.png" alt="" width={20} height={20} />
+                <MoreHorizontal className="h-8 w-8" />
             </div>
             <ResponsiveContainer width="100%" height="90%">
                 <BarChart width={500} height={300} data={data} barSize={18}>

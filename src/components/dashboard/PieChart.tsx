@@ -2,6 +2,7 @@
 
 import { TrendingUp, TrendingDown } from "lucide-react"
 import { Pie, PieChart, Cell, ResponsiveContainer, Legend } from "recharts"
+import { MoreHorizontal } from 'lucide-react'
 
 import {
     Card,
@@ -24,8 +25,8 @@ const chartData = [
 ]
 
 const chartConfig = {
-    count: {
-        label: "Count",
+    Participants: {
+        label: "Students",
     },
     Male: {
         label: "Male",
@@ -46,9 +47,10 @@ export default function MaleFemaleRatioPieChart() {
 
     return (
         <Card className="flex flex-col h-full justify-between">
-            <CardHeader className="items-center pb-2">
+{/* Suggested code may be subject to a license. Learn more: ~LicenseLog:900158266. */}
+            <CardHeader className="flex-row items-center justify-between pb-2 -m-1">
                 <CardTitle>Student Ratio</CardTitle>
-                <CardDescription>January - June 2024</CardDescription>
+                <MoreHorizontal className="h-8 w-8" />
             </CardHeader>
             <CardContent className="flex-1 pb-0">
                 <ChartContainer
@@ -86,7 +88,7 @@ export default function MaleFemaleRatioPieChart() {
                     }
                 </div>
                 <div className="leading-none text-muted-foreground">
-                    Total participants: {totalCount}
+                    Total {chartConfig.Participants.label}: {totalCount}
                 </div>
             </CardFooter>
         </Card>

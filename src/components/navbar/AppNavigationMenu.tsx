@@ -4,8 +4,7 @@ import * as React from "react"
 import Link from "next/link"
 
 import { cn } from "@/lib/utils"
-import { Icons } from "@/components/icons"
-import { School } from 'lucide-react';
+import { GalleryVerticalEnd } from 'lucide-react';
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -60,17 +59,17 @@ export default function AppNavigationMenu() {
     <NavigationMenu className="hidden lg:flex">
       <NavigationMenuList>
         <NavigationMenuItem>
-          <NavigationMenuTrigger >Menu</NavigationMenuTrigger>
+          <NavigationMenuTrigger >SchoolSync</NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
               <li className="row-span-3">
                 <NavigationMenuLink asChild>
                   <a
-                    className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
+                    className="flex h-full w-full select-none flex-col justify-between rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
                     href="/"
                   >
-                    <School size={32} color="#561fbd" />
-                    <div className="mb-2 mt-4 text-lg font-medium">
+                    <div className="flex flex-col gap-3 mb-2 mt-4 text-lg font-medium">
+                      <GalleryVerticalEnd />
                       SchoolSync
                     </div>
                     <p className="text-sm leading-tight text-muted-foreground">
@@ -79,14 +78,14 @@ export default function AppNavigationMenu() {
                   </a>
                 </NavigationMenuLink>
               </li>
+              <ListItem href="/" title="Home">
+                Get back to the landing page
+              </ListItem>
               <ListItem href="/" title="About">
                 Learn abut our comprehensive platform that seamlessly connects teachers, students, and parents.
               </ListItem>
-                <ListItem href="#features" title="Features">
-                  Learn about the incredible features of SchoolSync
-                </ListItem>
-              <ListItem href="/" title="Get Started">
-                How to get started with out app.
+              <ListItem href="#hero" title="Features">
+                Learn about the incredible features of SchoolSync
               </ListItem>
             </ul>
           </NavigationMenuContent>
@@ -95,7 +94,7 @@ export default function AppNavigationMenu() {
         <NavigationMenuItem>
           <Link href="/admin" legacyBehavior passHref>
             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-              Your Dashboard
+              Dashboard
             </NavigationMenuLink>
           </Link>
         </NavigationMenuItem>
